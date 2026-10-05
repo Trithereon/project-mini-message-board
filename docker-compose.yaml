@@ -15,14 +15,14 @@ services:
       retries: 3
     # Extra security:
     user: "10001:10001"
-    read-only: true
+    read_only: true
     tmpfs:
       - /tmp
     cap_drop: [ALL]
     security_opt:
       - no-new-privileges:true
     pids_limit: 100
-    mem-limit: 256m
+    mem_limit: 256m
     cpus: 0.5
 
 networks:
