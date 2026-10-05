@@ -1,0 +1,13 @@
+services:
+  mini-msgboard:
+    container_name: mini-msgboard
+    build: .
+    init: true
+    restart: unless-stopped
+    #ports:
+    #  - "51111:51111"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://mini-msgboard:51111/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
