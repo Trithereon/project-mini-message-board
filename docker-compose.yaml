@@ -4,8 +4,8 @@ services:
     build: .
     init: true
     restart: unless-stopped
-    #ports:
-    #  - "51111:51111"
+    ports:
+      - "51111:51111"
     networks:
       - vpn_net
     healthcheck:
