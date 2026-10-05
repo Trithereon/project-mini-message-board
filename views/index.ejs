@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head", {title:title}) %>
+  <body>
+    <%- include("./partials/header", {title:title}) %>
+    <a href="/new">Write new message</a>
+    <div class="messageBlock">
+      <% messages.forEach((message)=>{ %>
+      <div>
+        <h3><%= message.user %></h3>
+        <span><%= message.text %></span>
+        <span>
+          Posted on
+          <%= message.added %>
+        </span>
+      </div>
+      <% }) %>
+    </div>
+    <%- include("./partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head", {title:title}) %>
+  <body>
+    <%- include("./partials/header",{title:title}) %>
+    <form action="/new" method="POST">
+      <div class="inputLine">
+        <label for="messageUser">Author</label>
+        <input type="text" id="messageUser" name="messageUser" />
+      </div>
+      <div class="inputLine">
+        <label for="messageText">Message</label>
+        <textarea id="messageText" name="messageText"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <a href="/">Go back to homepage</a>
+    <%- include("./partials/footer") %>
+  </body>
+</html>
