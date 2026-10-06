@@ -6,13 +6,10 @@
     <a href="/new">Write new message</a>
     <div class="messageBlock">
       <% messages.forEach((message)=>{ %>
-      <div>
-        <h3><%= message.user %></h3>
-        <span><%= message.text %></span>
-        <span>
-          Posted on
-          <%= message.added %>
-        </span>
+      <div class="message">
+        <h3 class="user"><%= message.user %></h3>
+        <span class="messageText"><%= message.text %></span>
+        <span class="date"> Posted on <%= message.added %> </span>
       </div>
       <% }) %>
     </div>

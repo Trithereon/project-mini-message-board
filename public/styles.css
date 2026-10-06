@@ -19,6 +19,27 @@ body {
   width: fit-content;
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  background: #f1dddd;
+  width: fit-content;
+  padding: 2px 4px;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.messageText {
+  font-size: 1.2em;
+}
+
+.date {
+  color: rgb(59, 149, 252);
+}
+
 a:hover {
   background: lightblue;
 }
