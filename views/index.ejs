@@ -5,14 +5,18 @@
     <%- include("./partials/header", {title:title}) %>
     <a href="/new">Write new message</a>
     <div class="messageBlock">
+      <% if (messages.length === 0) { %>
+      <h3>No messages yet...</h3>
+      <% }; %>
       <% messages.forEach((message)=>{ %>
       <div class="message">
-        <h3 class="user"><%= message.user %></h3>
+        <h3 class="user"><%= message.username %></h3>
         <span class="messageText"><%= message.text %></span>
         <small class="date"> Posted on <%= message.added %> </small>
       </div>
       <% }) %>
     </div>
+    <a href="/delete">DELETE all messages</a>
     <%- include("./partials/footer") %>
   </body>
 </html>
