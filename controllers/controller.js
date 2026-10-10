@@ -65,3 +65,23 @@ exports.deleteGet = async (req, res) => {
   await db.deleteAllMessages();
   return res.redirect("/");
 };
+
+// Added this confirmation step to combat bots clicking every button on my website.
+exports.deletePost = [
+  [body("confirmDelete").trim().isString({ min: 1, max: 7 })],
+  async (req, res) => {
+    // Server-side validation
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res
+        .status(400)
+        .render("form", { title: "New Message", errors: errors.array() });
+    }
+
+    const { confirmDelete } = req.body;
+    if (confirmDelete === "confirm") {
+      await db.deleteAllMessages();
+    }
+    return res.redirect("/");
+  },
+];

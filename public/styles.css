@@ -41,7 +41,8 @@ body {
   color: rgb(59, 149, 252);
 }
 
-a:hover {
+a:hover,
+details:hover {
   background: lightblue;
 }
 
@@ -72,4 +73,15 @@ footer {
   margin-bottom: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+details {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.delete-form {
+  padding: 20px;
+  width: 150px;
+  background: lightblue;
 }

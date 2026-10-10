@@ -16,7 +16,20 @@
       </div>
       <% }) %>
     </div>
-    <a href="/delete">DELETE all messages</a>
+    <details>
+      <summary>DELETE all messages</summary>
+      <form class="delete-form" action="/delete" method="POST">
+        <label for="confirmDelete">Are you sure?</label>
+        <input
+          type="text"
+          id="confirmDelete"
+          name="confirmDelete"
+          placeholder="Type 'confirm' to delete"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </details>
     <%- include("./partials/footer") %>
   </body>
 </html>
