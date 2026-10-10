@@ -3,8 +3,8 @@ const app = express();
 const path = require("node:path");
 const router = require("./routes/router");
 
-const PORT = 51111;
-const HOSTNAME = "localhost";
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -15,7 +15,7 @@ app.use(express.static(publicPath));
 app.use("/", router);
 
 app.listen(PORT, (error) => {
-  console.log(`Serving on http://${HOSTNAME}:${PORT}`);
+  console.log(`Listening on http://${HOST}:${PORT}`);
   if (error) throw error;
 });
 

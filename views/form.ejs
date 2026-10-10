@@ -3,6 +3,8 @@
   <%- include("./partials/head", {title:title}) %>
   <body>
     <%- include("./partials/header",{title:title}) %>
+    <%- include("./partials/errors") %>
+
     <form action="/new" method="POST">
       <div class="inputLine">
         <label for="messageUser">Author</label>
