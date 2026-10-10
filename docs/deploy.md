@@ -3,6 +3,7 @@
 ## Database
 
 - Each project needs its own role (or db_user) and db.
+- Dev:
 
 ```bash
 # Open Postgres prompt as current linux user
@@ -16,6 +17,15 @@ CREATE DATABASE myapp OWNER myapp;
 
 # Block public access to schema so only the owner can use it
 REVOKE ALL ON DATABASE myapp FROM PUBLIC;
+```
+
+- Prod:
+
+```bash
+# Open Postgres prompt in its docker container
+docker compose exec postgres psql -U postgres
+
+# Create role, database and revoke public access as with dev mode.
 ```
 
 ## Environment Variables
